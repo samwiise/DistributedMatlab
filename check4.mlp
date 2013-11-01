@@ -1,0 +1,25 @@
+parallel{
+	while(a<10000)
+	{
+		Print "A",a;
+		a=a+1;
+	}
+
+	while(b<10000)
+	{
+		Print "B",b;
+		b=b+1;
+	}
+	while(e<10000)
+	{
+		Print "E",e;
+		e=e+1;
+	}
+
+	while(f<10000)
+	{
+		Print "F",f;
+		f=f+1;
+	}
+
+}

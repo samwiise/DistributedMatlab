@@ -1,0 +1,31 @@
+
+flg = WaitForDevice(0);
+
+if ( flg == 1){
+	
+	Print "Connected";
+	
+	while( flg==1){
+
+		rs = GetMatrixFromDevice(0);
+		
+		if(IsMatrix(rs)==1){
+			Print "Matrix recieved of",GetRows(rs),"Rows and",
+				GetColumns(rs),"Columns.";
+			Print rs;
+			Print "Transposing Matrix";
+			rs1 = Transpose(rs);
+			Print "Multiplying Recieved Matrix and Transposed Matrix";
+			rs1 = rs * rs1;
+			Print "Transposing the resultant Matrix";
+			rs1 = Transpose(rs1);
+			Print "Sending matrix back";
+			a=SetMatrixToDevice(0,rs1);
+		}else{
+			if(rs!=0)flg=0;
+		}
+	}
+
+}else{
+	Print "Could not connected";
+}

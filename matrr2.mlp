@@ -1,0 +1,42 @@
+
+flg = WaitForDevice(0);
+
+if ( flg == 1){
+	
+	Print "Connected";
+	
+	while( flg==1){
+
+		rs = GetMatrixFromDevice(0);
+		
+		if(IsMatrix(rs)==1){
+			Print "Matrix recieved of",GetRows(rs),"Rows and",
+				GetColumns(rs),"Columns.";
+			Print rs;
+
+			Print "Perform the following Operations";
+			Print "1 - Take Adjoint of recieved Matrix";
+			Print "2 - Transpose the recieved Matrix";
+			Print "3 - Take the Adjoint of Transposed Matrix";
+			Print "5 - Multiply the two resultant matrices";
+
+			a = InputNumber ("Enter 1 to continue - ");
+			if(a==1)
+			{
+				parallel{
+					rs1 = Adjoint(rs);
+					rs2 = Adjoint(Transpose(rs));			
+				}
+				rs = rs1 * rs2;
+				Print rs;
+			}
+			Print "Sending matrix back";
+			a=SetMatrixToDevice(0,rs);
+		}else{
+			if(rs!=0)flg=0;
+		}
+	}
+
+}else{
+	Print "Could not connected";
+}

@@ -1,0 +1,10 @@
+// Demonstration of looping on multiple pc's
+
+//parallel
+//{
+	for(a=0;a<100;a++)
+		Print "A", a;
+	
+	for(b=0;b<100;b++)
+		Print "B",b;
+//}

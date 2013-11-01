@@ -1,0 +1,12 @@
+a=4;
+do 
+{
+b=0;
+	while(b<4){
+		Print "B",a;
+		b++;
+	}
+	Print "A",a;
+	a++;
+}
+while(a<11);

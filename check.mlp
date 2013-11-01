@@ -1,0 +1,10 @@
+a = 10;
+b = 5;
+
+Print a+b;
+
+c=a*b;
+
+
+
+d = DefineMatrix([4 4][4 2]);
